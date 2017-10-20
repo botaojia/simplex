@@ -26,13 +26,20 @@ The optimal solution of X_1 could be found by iterating the above actions on the
 
 # Application 1: function minimization
 1. Find function minimum. (the source code can be found in the zip file folder "function_demos"). I show two examples, one is the famous Rosenbrock function and the original paper [1] also use this one as a good testing function. Because Rosenbrock function has a slow convergence "valley" so it is a good candidate to test the performance for optimization algorithms. The following Fig2. shows the trajectory of X_1 and the final convergence. The convergence is achieved within 100 steps in the plot. (with a considerately strict termination criteria. ) 
+
+![image](https://github.com/botaojia/simplex/blob/master/rosenbrock.png)
+
 The second function i show is a polynomial function. We can see how fast the convergence can happen comparing with the case in Rosenbrock function. The convergence is achieved within 70 steps in the plot. (with the same termination criteria. )
 
 For both Rosenbrock and the polynomial function, unconstrained parameter range is assumed. If constrains are necessary, one way to approach is to transform the original parameter to be a periodic parameter and change the target function prototype accordingly. 
 
+![image](https://github.com/botaojia/simplex/blob/master/polynomial.png)
+
 # Application 2: nonlinear-least-square fit
 
 2. Nonlinear-Least-Square fit (nls-fit) (the source code and the data can be found in the zip file folder "nlsq_fit".) A well-known algorithm to do nls-fit is called Gauss-Newton algorithm. Some famous statistics tools have Gauss-Newton algorithm built-in. However, the algorithm requires the calculation of the "score vector", which is the partial derivative with respect to each parameters. Using the simplex algorithm, we can easily implement the nls-fit without worrying about if the original model has continuous derivative or not. The target function for nls-fit is the RSS(residual sum of squares). i.e. we have a function Y=X*beta, where X is the predictor. We have a set of measurement on Y --- Ym. Then RSS=sum{ (Y-Ym) *(Y-Ym) } and our goal is the find a beta to minimize the RSS. The following formula shows a function that nonlinearly relates to the variable "lambda". 
+
+![image](https://github.com/botaojia/simplex/blob/master/sinc_formula.png）
 
 The parameters need to be found out are:
 
@@ -46,8 +53,12 @@ Using the simplex algorithm, the fitted parameters are:
 
 The data, initial curve and fitted curve are shown in the following Fig.4. And it can be seen that the fitted parameters enable the model to match the data very well, although the starting curve is far from the data. If the covariance of the fitted parameters is a must, there are a few ways to get it. i.e., one way is to assume asymptotic normality of the error and calculate the Hessian matrix; another way is to assume no particular distribution function, but repeatedly sample a portion of the measurement data to carry out the nlsq-fit, which is called bootstrap method. Calculating the covariance of the fitted parameters is out of the scope of this article. 
 
+![image](https://github.com/botaojia/simplex/blob/master/spec_simplex.png)
+
 # Source code and flowchart
 In the attachment of this article, source code, make file is provided. The platform is ubuntu, g++ 4.2.4. i use STL and only standard C++, so the code is portable. The simplex fitting method is called BT::Simplex, there are illustration and examples on how to use the BT::Simplex method. All the above plots are generated based upon the output results from BT::Simplex. Finally, i'd like to share a graph showing the algorithm flowchart.
+
+![image](https://github.com/botaojia/simplex/blob/master/flowchart.png)
 
 [1]Nelder, J.A., and Mead, R. 1965, "A simplex Method for Function Minimization", Computer Journal, Vol. 7, pp. 308-313.
 
