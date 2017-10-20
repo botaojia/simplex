@@ -13,7 +13,8 @@ Thirdly, the algorithm iteratively updates the worst point Xw by four possible a
 1) reflection
 2) expansion
 3) 1-dimensional contraction
-4) multiple contraction.
+4) multiple contraction
+
 The following Fig. 1 sketches the actions in a 3-D space with a tetrahedron as the simplex.
 
 ![image](https://github.com/botaojia/simplex/blob/master/simplex_fig.png)
@@ -74,5 +75,7 @@ All above numerical results can be achieved by downloading the project, then in 
 [1]Nelder, J.A., and Mead, R. 1965, "A simplex Method for Function Minimization", Computer Journal, Vol. 7, pp. 308-313.
 
 Addendum
+
 This article is migrated from my published online peer reviewed paper on www.codeguru.com
+
 http://www.codeguru.com/cpp/article.php/c17505/Simplex-Optimization-Algorithm-and-Implemetation-in-C-Programming.htm
