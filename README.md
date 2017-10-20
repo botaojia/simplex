@@ -48,7 +48,8 @@ For both Rosenbrock and the polynomial function, unconstrained parameter range i
 
 ![image](https://github.com/botaojia/simplex/blob/master/sinc_formula.png)
 
-Source code for the above function definition is at [spectrum_RSS.cpp](https://github.com/botaojia/simplex/blob/master/spectrum_RSS.cpp).
+RSS definition source code of the above function is in [spectrum_RSS.cpp](https://github.com/botaojia/simplex/blob/master/spectrum_RSS.cpp).
+The goal now is to minimize RSS given observation [data](https://github.com/botaojia/simplex/blob/master/data.txt).
 
 The parameters need to be found out are:
 
