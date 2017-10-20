@@ -39,7 +39,7 @@ For both Rosenbrock and the polynomial function, unconstrained parameter range i
 
 2. Nonlinear-Least-Square fit (nls-fit) (the source code and the data can be found in the zip file folder "nlsq_fit".) A well-known algorithm to do nls-fit is called Gauss-Newton algorithm. Some famous statistics tools have Gauss-Newton algorithm built-in. However, the algorithm requires the calculation of the "score vector", which is the partial derivative with respect to each parameters. Using the simplex algorithm, we can easily implement the nls-fit without worrying about if the original model has continuous derivative or not. The target function for nls-fit is the RSS(residual sum of squares). i.e. we have a function Y=X*beta, where X is the predictor. We have a set of measurement on Y --- Ym. Then RSS=sum{ (Y-Ym) *(Y-Ym) } and our goal is the find a beta to minimize the RSS. The following formula shows a function that nonlinearly relates to the variable "lambda". 
 
-![image](https://github.com/botaojia/simplex/blob/master/sinc_formula.png）
+![image](https://github.com/botaojia/simplex/blob/master/sinc_formula.png
 
 The parameters need to be found out are:
 
