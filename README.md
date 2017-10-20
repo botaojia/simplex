@@ -27,7 +27,7 @@ The following Fig. 1 sketches the actions in a 3-D space with a tetrahedron as t
 
 4) Multiple contraction: if the newly found X_r is even worst than the existing worst point Xw, then the simplex contracts along all dimensions toward the existing best point X_1.
 
-The optimal solution of X_1 could be found by iterating the above actions on the updated condition of the simplex at each step. Source code for simplex algorithm is [simplex.h](https://github.com/botaojia/simplex/blob/master/simplex.h)
+The optimal solution of X_1 could be found by iterating the above actions on the updated condition of the simplex at each step. Source code for simplex algorithm is [simplex.h](https://github.com/botaojia/simplex/blob/master/simplex.h).
 
 # Application 1: function minimization
 I show two examples, one is the famous [Rosenbrock function](https://en.wikipedia.org/wiki/Rosenbrock_function). Because Rosenbrock function has a slow convergence "valley" so it is a good candidate to test the performance for optimization algorithms. The following Fig2. shows the trajectory of X_1 and the final convergence. The convergence is achieved within 100 steps in the plot. (with a considerately strict termination criteria) 
@@ -36,7 +36,7 @@ I show two examples, one is the famous [Rosenbrock function](https://en.wikipedi
 
 The second function demo is a [polynomial function](https://en.wikipedia.org/wiki/Polynomial). We can see how fast the convergence can happen comparing with the case in Rosenbrock function. The convergence is achieved within 70 steps in the plot, with the same termination criteria as in Rosenbrock function demo.
 
-For both Rosenbrock and the polynomial function, unconstrained parameter range is assumed. If constrains are necessary, one way to approach is to transform the original parameter to be a periodic parameter and change the target function prototype accordingly. Source code for Rosenbrock and polynomial function minimization demo is in [demo.cpp](https://github.com/botaojia/simplex/blob/master/demo.cpp)
+For both Rosenbrock and the polynomial function, unconstrained parameter range is assumed. If constrains are necessary, one way to approach is to transform the original parameter to be a periodic parameter and change the target function prototype accordingly. Source code for Rosenbrock and polynomial function minimization demo is in [demo.cpp](https://github.com/botaojia/simplex/blob/master/demo.cpp).
 
 ![image](https://github.com/botaojia/simplex/blob/master/polynomial.png)
 
