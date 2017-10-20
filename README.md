@@ -27,16 +27,16 @@ The following Fig. 1 sketches the actions in a 3-D space with a tetrahedron as t
 
 4) Multiple contraction: if the newly found X_r is even worst than the existing worst point Xw, then the simplex contracts along all dimensions toward the existing best point X_1.
 
-The optimal solution of X_1 could be found by iterating the above actions on the updated condition of the simplex at each step.
+The optimal solution of X_1 could be found by iterating the above actions on the updated condition of the simplex at each step. Source code for simplex algorithm is [simplex.h](https://github.com/botaojia/simplex/blob/master/simplex.h)
 
 # Application 1: function minimization
-I show two examples, one is the famous [Rosenbrock function](https://en.wikipedia.org/wiki/Rosenbrock_function). Because Rosenbrock function has a slow convergence "valley" so it is a good candidate to test the performance for optimization algorithms. The following Fig2. shows the trajectory of X_1 and the final convergence. The convergence is achieved within 100 steps in the plot. (with a considerately strict termination criteria. ) 
+I show two examples, one is the famous [Rosenbrock function](https://en.wikipedia.org/wiki/Rosenbrock_function). Because Rosenbrock function has a slow convergence "valley" so it is a good candidate to test the performance for optimization algorithms. The following Fig2. shows the trajectory of X_1 and the final convergence. The convergence is achieved within 100 steps in the plot. (with a considerately strict termination criteria) 
 
 ![image](https://github.com/botaojia/simplex/blob/master/rosenbrock.png)
 
 The second function demo is a [polynomial function](https://en.wikipedia.org/wiki/Polynomial). We can see how fast the convergence can happen comparing with the case in Rosenbrock function. The convergence is achieved within 70 steps in the plot, with the same termination criteria as in Rosenbrock function demo.
 
-For both Rosenbrock and the polynomial function, unconstrained parameter range is assumed. If constrains are necessary, one way to approach is to transform the original parameter to be a periodic parameter and change the target function prototype accordingly. 
+For both Rosenbrock and the polynomial function, unconstrained parameter range is assumed. If constrains are necessary, one way to approach is to transform the original parameter to be a periodic parameter and change the target function prototype accordingly. Source code for Rosenbrock and polynomial function minimization demo is in (demo.cpp)[https://github.com/botaojia/simplex/blob/master/demo.cpp]
 
 ![image](https://github.com/botaojia/simplex/blob/master/polynomial.png)
 
@@ -45,6 +45,7 @@ For both Rosenbrock and the polynomial function, unconstrained parameter range i
 2. Nonlinear-Least-Square fit (nls-fit). A well-known algorithm to do nls-fit is called Gauss-Newton algorithm. Some famous statistics tools have Gauss-Newton algorithm built-in. However, the algorithm requires the calculation of the "score vector", which is the partial derivative with respect to each parameters. Using the simplex algorithm, we can easily implement the nls-fit without worrying about if the original model has continuous derivative or not. The target function for nls-fit is the RSS (residual sum of squares). i.e. we have a function Y=X*beta, where X is the predictor. We have a set of measurement on Y --- Ym. Then RSS=sum{ (Y-Ym) *(Y-Ym) } and our goal is to find a beta to minimize the RSS. The following formula shows a function that nonlinearly relates to the variable "lambda". 
 
 ![image](https://github.com/botaojia/simplex/blob/master/sinc_formula.png)
+Source code for the above formula function definition is at [spectrum_RSS.cpp](https://github.com/botaojia/simplex/blob/master/spectrum_RSS.cpp).
 
 The parameters need to be found out are:
 
@@ -56,7 +57,7 @@ Using the simplex algorithm, the fitted parameters are:
 
 {23.61, 32.82, 446.44, 0.7892, 55.09, -0.00108}.
 
-The data, initial curve and fitted curve are shown in the following Fig.4. It can be seen that the fitted parameters enable the model to match the data very well, although the starting curve is far from the data. If the covariance of the fitted parameters is a must, there are a few ways to get it. i.e., one way is to assume asymptotic normality of the error and calculate the [Hessian matrix](https://en.wikipedia.org/wiki/Hessian_matrix); another way is to assume no particular distribution function, but repeatedly sampling a portion of the measurement data to carry out the nlsq-fit, which is called [bootstrap method](https://en.wikipedia.org/wiki/Bootstrapping_(statistics)). Calculating the covariance of the fitted parameters is out of the scope of this article. 
+The data, initial curve and fitted curve are shown in the following Fig.4. It can be seen that the fitted parameters enable the model to match the data very well, although the starting curve is far from the data. If the covariance of the fitted parameters is a must, there are a few ways to get it. i.e., one way is to assume asymptotic normality of the error and calculate the [Hessian matrix](https://en.wikipedia.org/wiki/Hessian_matrix); another way is to assume no particular distribution function, but repeatedly sampling a portion of the measurement data to carry out the nlsq-fit, which is called [bootstrap method](https://en.wikipedia.org/wiki/Bootstrapping_(statistics)). Calculating the covariance of the fitted parameters is out of the scope of this article. Source code to run the above optimzation and get all parameters is in [main.cpp](https://github.com/botaojia/simplex/blob/master/main.cpp).
 
 ![image](https://github.com/botaojia/simplex/blob/master/spec_simplex.png)
 
