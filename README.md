@@ -36,7 +36,7 @@ I show two examples, one is the famous [Rosenbrock function](https://en.wikipedi
 
 The second function demo is a [polynomial function](https://en.wikipedia.org/wiki/Polynomial). We can see how fast the convergence can happen comparing with the case in Rosenbrock function. The convergence is achieved within 70 steps in the plot, with the same termination criteria as in Rosenbrock function demo.
 
-For both Rosenbrock and the polynomial function, unconstrained parameter range is assumed. If constrains are necessary, one way to approach is to transform the original parameter to be a periodic parameter and change the target function prototype accordingly. Source code for Rosenbrock and polynomial function minimization demo is in (demo.cpp)[https://github.com/botaojia/simplex/blob/master/demo.cpp]
+For both Rosenbrock and the polynomial function, unconstrained parameter range is assumed. If constrains are necessary, one way to approach is to transform the original parameter to be a periodic parameter and change the target function prototype accordingly. Source code for Rosenbrock and polynomial function minimization demo is in [demo.cpp](https://github.com/botaojia/simplex/blob/master/demo.cpp)
 
 ![image](https://github.com/botaojia/simplex/blob/master/polynomial.png)
 
@@ -45,7 +45,8 @@ For both Rosenbrock and the polynomial function, unconstrained parameter range i
 2. Nonlinear-Least-Square fit (nls-fit). A well-known algorithm to do nls-fit is called Gauss-Newton algorithm. Some famous statistics tools have Gauss-Newton algorithm built-in. However, the algorithm requires the calculation of the "score vector", which is the partial derivative with respect to each parameters. Using the simplex algorithm, we can easily implement the nls-fit without worrying about if the original model has continuous derivative or not. The target function for nls-fit is the RSS (residual sum of squares). i.e. we have a function Y=X*beta, where X is the predictor. We have a set of measurement on Y --- Ym. Then RSS=sum{ (Y-Ym) *(Y-Ym) } and our goal is to find a beta to minimize the RSS. The following formula shows a function that nonlinearly relates to the variable "lambda". 
 
 ![image](https://github.com/botaojia/simplex/blob/master/sinc_formula.png)
-Source code for the above formula function definition is at [spectrum_RSS.cpp](https://github.com/botaojia/simplex/blob/master/spectrum_RSS.cpp).
+
+Source code for the above function definition is at [spectrum_RSS.cpp](https://github.com/botaojia/simplex/blob/master/spectrum_RSS.cpp).
 
 The parameters need to be found out are:
 
@@ -61,10 +62,14 @@ The data, initial curve and fitted curve are shown in the following Fig.4. It ca
 
 ![image](https://github.com/botaojia/simplex/blob/master/spec_simplex.png)
 
-# Source code and flowchart
+# Source Code and Flowchart
 Source code, make file is provided. The simplex fitting method is called BT::Simplex. There are illustration and examples on how to use the BT::Simplex method. All the above plots are generated based upon the output results from BT::Simplex. Finally, i'd like to share a graph showing the algorithm flowchart.
 
 ![image](https://github.com/botaojia/simplex/blob/master/flowchart.png)
+
+# Compilation and Execution
+All above results can be achieved by downloading the project, then in linux, executing
+[make](https://github.com/botaojia/simplex/blob/master/makefile), and then run the generated two executables spectrum_nlsq_fit, demo.
 
 [1]Nelder, J.A., and Mead, R. 1965, "A simplex Method for Function Minimization", Computer Journal, Vol. 7, pp. 308-313.
 
