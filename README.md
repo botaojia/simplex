@@ -11,6 +11,9 @@ Secondly, the target function f is evaluated for all the n+1 vertexes on the sim
 
 Thirdly, the algorithm iteratively updates the worst point Xw by four possible actions: 1) reflection, 2) expansion, 3) 1-dimensional contraction, 4) multiple contraction. The following Fig. 1 sketches the actions in a 3-D space with a tetrahedron as the simplex.
 
+![image](https://github.com/botaojia/simplex/blob/master/simplex_fig.png)
+
+
 1) Reflection: reflects away Xw through the centroid Xg of the other n best points, to get a reflected point X_r.
 
 2) Expansion: if the newly found reflected point is better than the existing best point X_1, then the simplex expands toward the newly found reflected point X_r.
