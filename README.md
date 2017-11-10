@@ -1,5 +1,17 @@
 # Simplex Optimization Algorithm and Implemetation in C++
 
+# Applications
+It has been 7 years since my implementation was first published in http://www.codeguru.com/cpp/article.php/c17505/Simplex-Optimization-Algorithm-and-Implemetation-in-C-Programming.htm. I'm very glad to find out my code was used or refered to by many other people including, e.g.
+A spectral imaging device system:
+https://www.perkinelmer.com/Content/LST_Software_Downloads/NuanceUserManual.pdf  (reference 13)
+A robot soccer software package:
+http://nimbro.net/OP/Doc/html/SimplexOptimizer_8hpp_source.html
+A Stanfard PhD thesis:
+http://aero-comlab.stanford.edu/Papers/thesis_manuel_lopez.pdf (reference 41)
+Other's Github projects such as:
+https://gitlab.doc.ic.ac.uk/jah113/epidemics/blob/b9aa354b14e949cd49479f5b3edbbb06ca1b0960/Code/MultiFinal/candidatemodels/simplex.hpp
+
+
 # Introduction
 The downhill simplex algorithm was invented by Nelder and Mead [1]. It is a method to find the minimum of a function in more than one independent variables, solving multi-dimensional optimzation problems. The method only requires function evaluations, no derivatives. Thus make it a compelling optimization algorithm when analytic derivative formula is difficult to write out. In this article, I will discuss the simplex algorithm, provide source code and testing demos in C++, show rich examples and applications. I will basically follow the spirit of reference [1]. In addition, I try to explain the algorithm in a more "example-oriented" manner.
 
@@ -49,7 +61,7 @@ For both Rosenbrock and the polynomial function, unconstrained parameter range i
 ![image](https://github.com/botaojia/simplex/blob/master/sinc_formula.png)
 
 RSS definition source code of the above function is in [spectrum_RSS.cpp](https://github.com/botaojia/simplex/blob/master/spectrum_RSS.cpp).
-The goal now is to minimize RSS given observation [data](https://github.com/botaojia/simplex/blob/master/data.txt).
+The goal now is to minimize RSS given observation/measurement [data](https://github.com/botaojia/simplex/blob/master/data.txt).
 
 The parameters need to be found out are:
 
@@ -82,3 +94,4 @@ Addendum
 This article is migrated from my published online peer reviewed paper on www.codeguru.com
 
 http://www.codeguru.com/cpp/article.php/c17505/Simplex-Optimization-Algorithm-and-Implemetation-in-C-Programming.htm
+
