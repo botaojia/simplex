@@ -1,13 +1,19 @@
 # Simplex Optimization Algorithm and Implemetation in C++
 
 # Applications
-It has been 7 years since my implementation was first published in http://www.codeguru.com/cpp/article.php/c17505/Simplex-Optimization-Algorithm-and-Implemetation-in-C-Programming.htm. I'm very glad to find out my code was used or refered to by many other people including, e.g.
+It has been 7 years since my implementation was first published in http://www.codeguru.com/cpp/article.php/c17505/Simplex-Optimization-Algorithm-and-Implemetation-in-C-Programming.htm. 
+
+I'm very glad to find out my code was used or refered to by many other people including, e.g.
+
 A spectral imaging device system:
 https://www.perkinelmer.com/Content/LST_Software_Downloads/NuanceUserManual.pdf  (reference 13)
+
 A robot soccer software package:
 http://nimbro.net/OP/Doc/html/SimplexOptimizer_8hpp_source.html
+
 A Stanfard PhD thesis:
 http://aero-comlab.stanford.edu/Papers/thesis_manuel_lopez.pdf (reference 41)
+
 Other's Github projects such as:
 https://gitlab.doc.ic.ac.uk/jah113/epidemics/blob/b9aa354b14e949cd49479f5b3edbbb06ca1b0960/Code/MultiFinal/candidatemodels/simplex.hpp
 
