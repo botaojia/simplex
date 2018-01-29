@@ -13,7 +13,7 @@ A robot soccer software package:
 
 http://nimbro.net/OP/Doc/html/SimplexOptimizer_8hpp_source.html
 
-A Stanfard PhD thesis:
+A Stanford PhD thesis:
 
 http://aero-comlab.stanford.edu/Papers/thesis_manuel_lopez.pdf (reference 41)
 
