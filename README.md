@@ -7,7 +7,7 @@ I'm very glad to find out my code was used or refered to by many other people in
 
 A spectral imaging device system:
 
-https://www-punchout.perkinelmer.com/Content/LST_Software_Downloads/tissueimaging/NuanceUserManual_3_0_2_rev0.pdf(page 125, software EULA 13)
+https://www-punchout.perkinelmer.com/Content/LST_Software_Downloads/tissueimaging/NuanceUserManual_3_0_2_rev0.pdf (page 125, software EULA 13)
 
 A robot soccer software package:
 
