@@ -92,16 +92,7 @@ Source code, make file is provided. The simplex fitting method is called BT::Sim
 
 ![image](https://github.com/botaojia/simplex/blob/master/flowchart.png)
 
-# Compilation and Execution
-All above numerical results can be achieved by downloading the project, then in linux, executing
-[make](https://github.com/botaojia/simplex/blob/master/makefile), and then run the generated two executables spectrum_nlsq_fit, demo.
-
 # Reference
 [1]Nelder, J.A., and Mead, R. 1965, "A simplex Method for Function Minimization", Computer Journal, Vol. 7, pp. 308-313.
 
-Addendum
-
-This article is migrated from my published online peer reviewed paper on www.codeguru.com
-
-http://www.codeguru.com/cpp/article.php/c17505/Simplex-Optimization-Algorithm-and-Implemetation-in-C-Programming.htm
 
